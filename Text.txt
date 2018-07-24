@@ -1,0 +1,15 @@
+     private void AddEntryItems(long entityId, GLEntityTypeValues entityType, Money amount, GLEntryItemValues entryItem, long instrumentTypeId, long lineOfBusinessId, long costCenterId, bool isDebit, long? matchingGLTemplateId = null,SegmentTypeAccount[] segmentTypeAccounts = null)
+        {
+            _glJournalHelper.AddLineItemByTemplateId(entityId: entityId
+                                         , entityType: entityType
+                                         , amount: amount
+                                         , entryItem: entryItem
+                                         , description: _description
+                                         , instrumentTypeId: instrumentTypeId
+                                         , lineOfBusinessId: lineOfBusinessId
+                                         , costCenterId: costCenterId
+                                         , isDebit: isDebit
+                                         , sourceId: _receivableInfo.GLSourceId
+                                         , matchingGlTemplateId: matchingGLTemplateId
+                                         , segmentTypeAccounts: segmentTypeAccounts ?? _segmentTypeAccounts);
+        }
